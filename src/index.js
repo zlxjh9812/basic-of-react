@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './App';
+// import CleanUp from './cleanUp';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <React.StrictMode>
+    <div>
     <App />
-  </React.StrictMode>
+    {/* <CleanUp/> */}
+    </div>
 );
 
