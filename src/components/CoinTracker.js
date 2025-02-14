@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-
-import "./CoinTracker.css"
+import styled from "../css/CoinTracker.module.css"
 function CoinTracker(){
     var[state,setState] = useState(true);
     var[coin,setCoins]=useState([]);
@@ -11,6 +10,7 @@ function CoinTracker(){
     }
     function onChangeName (event){
         setName((nameVal)=>event.target.value)
+        
     }
 
     const filterArr = coin.filter((coins)=>
@@ -25,17 +25,18 @@ function CoinTracker(){
         .then((json) => {
           setCoins(json);
           setState(false);
+          console.log(coin)
         });
     },[])
     return(
+        <div className={styled.body}>
         <div>
-        <div>
-        <h1 id="txt">Coin</h1>
+        <h1 className={styled.h1}>Coin</h1>
         
-        <label  id="txt" htmlFor="money">how much do you have?</label>
+        <label  className={styled.h1} htmlFor="money">how much do you have?</label>
         <input value={val} onChange={onChangeVal}></input>
         <br/>
-        <label  id="txt" htmlFor="search">what do you want</label>
+        <label  className={styled.h1} htmlFor="search">what do you want</label>
         <input value={name} onChange={onChangeName}></input>
         </div>
         {state ? <strong>Loading</strong>:null}
@@ -47,8 +48,8 @@ function CoinTracker(){
    
       {filterArr.map((coin) =>
      
-      <ul>
-        <li>
+      <ul  className={styled.ul}>
+        <li className={styled.li}>
         <p>{coin.name}({coin.symbol})</p>
         <hr></hr>
         <p>Price : {coin.quotes.USD.price}</p>
