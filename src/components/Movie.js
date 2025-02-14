@@ -28,7 +28,7 @@ function Movie() {
             <h1 className={css.h1}>Movie</h1>
             <hr/> {!state ? <h1>loading...</h1> : 
                 <div>{movie.map(movie => 
-                 <Info movie ={movie} id={movie.id}/>
+                 <Info movie ={movie} id={movie.id} title={movie.title}/>
                )}
                 </div>
             }

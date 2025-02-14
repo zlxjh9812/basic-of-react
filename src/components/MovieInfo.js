@@ -4,7 +4,8 @@ function Info(movie) {
     return (
         <div key={movie.id}>
             <img src={movie.medium_cover_image} alt={movie.title}></img>
-            <Link to={`/movieDetail/${movie.id}`}><h2>{movie.title}</h2></Link>
+            {/* Link를 통해 데이터를 전송 */}
+            <Link to={`/movieDetail/${movie.id}\${movie.title}`}><h2>{movie.title}</h2></Link>
             {
                 movie.summary !== null || movie.summary !== ""
                     ? <p>{movie.summary}</p>

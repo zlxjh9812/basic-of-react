@@ -5,7 +5,8 @@ function Home(){
    return (
     <Router>
         <switch>
-            <Route path="/movieDetail/:id">
+            {/* path에서 url의 데이터를 받음 */}
+            <Route path="/movieDetail/:id/:title">
                 <Detail/>
             </Route>
             <Route path="/movieList">
